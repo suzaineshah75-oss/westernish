@@ -3,267 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Westernish | Western Clothing Store</title>
+<title>Westernish | Western Clothing Store Indore</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-/* Smooth scroll */
-html{
-  scroll-behavior:smooth;
+:root{
+  --bg:#ffffff;
+  --text:#000000;
+  --card:#f5f5f5;
+  --nav:#ffffff;
 }
 
-/* Body fix for fixed navbar */
+body.dark{
+  --bg:#121212;
+  --text:#ffffff;
+  --card:#1e1e1e;
+  --nav:#1a1a1a;
+}
+
+html{scroll-behavior:smooth}
 body{
   margin:0;
   padding-top:70px;
   font-family:'Poppins',sans-serif;
-  background:#fff;
-  color:#222;
+  background:var(--bg);
+  color:var(--text);
 }
 
-/* Navbar */
+/* SALE */
+.sale{
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:14px;
+}
+
+/* NAVBAR */
 nav{
   position:fixed;
-  top:0;
-  width:100%;
-  background:#fff;
+  top:0;width:100%;
+  background:var(--nav);
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:12px 20px;
-  box-shadow:0 2px 10px rgba(0,0,0,.1);
+  padding:10px 20px;
+  box-shadow:0 2px 10px rgba(0,0,0,.2);
   z-index:1000;
 }
-nav h1{
-  margin:0;
-  font-size:22px;
-}
-nav a{
-  text-decoration:none;
+.menu a{
   margin-left:15px;
-  color:#222;
+  text-decoration:none;
+  color:var(--text);
   font-size:14px;
-  font-weight:500;
+}
+.hamburger{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+}
+.toggle{
+  cursor:pointer;
+  font-size:18px;
+  margin-left:10px;
 }
 
-/* Hero */
+/* HERO */
 .hero{
-  height:100vh;
-  background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-  url('https://images.unsplash.com/photo-1521334884684-d80222895322') center/cover no-repeat;
+  height:90vh;
+  background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+  url('https://images.unsplash.com/photo-1521334884684-d80222895322') center/cover;
+  color:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  color:#fff;
-}
-.hero-text{
-  animation:slideUp 1.2s ease forwards;
-}
-@keyframes slideUp{
-  from{opacity:0;transform:translateY(50px);}
-  to{opacity:1;transform:translateY(0);}
 }
 
-/* Sections */
+/* SECTION */
 .section{
   padding:60px 20px;
   text-align:center;
 }
-.collections{
+.products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:20px;
-  max-width:1100px;
-  margin:auto;
 }
 .card{
-  border-radius:12px;
+  background:var(--card);
+  box-shadow:0 6px 15px rgba(0,0,0,.15);
+  border-radius:10px;
   overflow:hidden;
-  box-shadow:0 6px 18px rgba(0,0,0,.15);
-  background:#fff;
 }
 .card img{
   width:100%;
-  height:240px;
+  height:230px;
   object-fit:cover;
 }
-.card h3{
-  margin:10px 0 5px;
-}
-.about{
-  background:#f6f6f6;
-}
-
-/* Fade animation */
-.fade-in{
-  opacity:0;
-  transform:translateY(40px);
-  transition:all .8s ease;
-}
-.fade-in.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* Tap animation */
-a,button{
-  transition:transform .2s ease;
-}
-a:active,button:active{
-  transform:scale(.95);
-}
-
-/* Footer */
-footer{
-  background:#111;
+.card button{
+  width:100%;
+  padding:10px;
+  background:#000;
   color:#fff;
-  padding:35px 20px;
-  text-align:center;
-}
-footer a{
-  color:#fff;
-  text-decoration:none;
-  margin:0 8px;
+  border:none;
 }
 
-/* WhatsApp button */
-.whatsapp-float{
+/* REVIEWS */
+.review{
+  background:var(--card);
+  padding:20px;
+  margin:10px auto;
+  max-width:500px;
+  border-radius:10px;
+}
+
+/* POPUP */
+.popup{
   position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:#fff;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  font-size:26px;
-  display:flex;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,.6);
+  display:none;
   align-items:center;
   justify-content:center;
-  text-decoration:none;
-  box-shadow:0 4px 15px rgba(0,0,0,.3);
-  z-index:2000;
+}
+.popup-content{
+  background:var(--bg);
+  padding:20px;
+  border-radius:10px;
 }
 
-/* MOBILE FIX */
+/* BOTTOM BAR */
+.bottom-bar{
+  position:fixed;
+  bottom:0;width:100%;
+  background:var(--nav);
+  display:flex;
+  justify-content:space-around;
+  box-shadow:0 -2px 10px rgba(0,0,0,.3);
+}
+.bottom-bar a{
+  padding:12px;
+  text-decoration:none;
+  color:var(--text);
+}
+
+/* MOBILE */
 @media(max-width:768px){
-  nav{
-    flex-direction:column;
-  }
-  nav a{
-    margin:6px;
-    font-size:13px;
-  }
-  .hero h2{
-    font-size:2.1rem;
-  }
-  .hero p{
-    font-size:1rem;
-  }
+  .menu{display:none;flex-direction:column}
+  .menu.show{display:flex}
+  .hamburger{display:block}
 }
 </style>
 </head>
 
 <body>
 
+<div class="sale">🔥 NEW ARRIVALS | Flat 20% OFF</div>
+
 <nav>
-  <h1>Westernish</h1>
+  <strong>Westernish</strong>
   <div>
+    <span class="toggle" onclick="toggleDark()">🌙</span>
+    <span class="hamburger" onclick="toggleMenu()">☰</span>
+  </div>
+  <div class="menu" id="menu">
     <a href="#home">Home</a>
-    <a href="#collection">Collection</a>
-    <a href="#about">About</a>
+    <a href="#shop">Shop</a>
+    <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <section class="hero" id="home">
-  <div class="hero-text">
-    <h2>Western Vibes.<br>Bold You.</h2>
-    <p>वेस्टर्निश – Indore’s Trendiest Western Wear Store</p>
+  <div>
+    <h1>Western Vibes. Bold You.</h1>
+    <p>Indore’s Trendiest Western Wear Store</p>
   </div>
 </section>
 
-<section class="section fade-in" id="collection">
-  <h2>Our Collection</h2>
-  <div class="collections">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-      <h3>Trendy Tops</h3>
-      <p>Everyday western</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-      <h3>Dresses</h3>
-      <p>Chic & classy</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
-      <h3>Party Wear</h3>
-      <p>Bold looks</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
-      <h3>Co-ords</h3>
-      <p>Modern style</p>
-    </div>
+<section class="section" id="shop">
+<h2>Shop Collection</h2>
+<div class="products">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+    <button onclick="openPopup()">View</button>
   </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
+    <button onclick="openPopup()">View</button>
+  </div>
+</div>
 </section>
 
-<section class="section about fade-in" id="about">
-  <h2>About Westernish</h2>
-  <p>
-    Westernish (वेस्टर्निश) is a modern western clothing store in Indore,
-    offering trendy, stylish outfits for women who love bold fashion.
-  </p>
+<section class="section" id="reviews">
+<h2>Customer Reviews</h2>
+<div class="review">⭐⭐⭐⭐⭐ Amazing quality – Neha</div>
+<div class="review">⭐⭐⭐⭐⭐ Best western store – Aarti</div>
 </section>
 
-<section class="section fade-in" id="contact">
-  <h2>Visit Our Store</h2>
-  <p>
-    📍 PVXX+3PP, Suyash Enclave, Sheetal Nagar,<br>
-    Indore, Madhya Pradesh 452010
-  </p>
-  <p>⏰ Open: 11 AM – 11 PM</p>
-
-  <a href="https://www.google.com/maps?q=PVXX+3PP,+Suyash+Enclave,+Sheetal+Nagar,+Indore,+Madhya+Pradesh+452010"
-     target="_blank"
-     style="display:inline-block;margin-top:15px;padding:12px 25px;
-     background:#000;color:#fff;text-decoration:none;border-radius:30px;">
-     📍 Get Directions
-  </a>
+<section class="section" id="contact">
+<h2>Visit Store</h2>
+<p>📍 Sheetal Nagar, Indore</p>
 </section>
 
-<footer>
-  <p>Follow Westernish</p>
-  <a href="#">Instagram</a> |
-  <a href="#">WhatsApp</a>
-  <p style="margin-top:10px;">© 2026 Westernish</p>
-</footer>
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h3>Trendy Dress</h3>
+    <p>DM us on WhatsApp</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
 
-<!-- WhatsApp -->
-<a href="https://wa.me/918103665109?text=Hi%20Westernish%20👗%20I%20want%20to%20shop%20from%20your%20store"
-   class="whatsapp-float" target="_blank">💬</a>
+<div class="bottom-bar">
+  <a href="https://wa.me/91XXXXXXXXXX">💬 WhatsApp</a>
+  <a href="tel:+91XXXXXXXXXX">📞 Call</a>
+  <a href="https://www.google.com/maps?q=PVXX+3PP+Indore">📍 Map</a>
+</div>
 
-<!-- Scroll animation -->
 <script>
-const faders=document.querySelectorAll('.fade-in');
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-},{threshold:.2});
-faders.forEach(f=>observer.observe(f));
+function toggleMenu(){
+  document.getElementById('menu').classList.toggle('show');
+}
+function openPopup(){
+  document.getElementById('popup').style.display='flex';
+}
+function closePopup(){
+  document.getElementById('popup').style.display='none';
+}
+function toggleDark(){
+  document.body.classList.toggle('dark');
+}
 </script>
 
 </body>
 </html>
 
-
-</body>
-</html>
 
 
