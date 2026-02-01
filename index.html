@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Westernish | Western Clothing Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#ffffff;
+  color:#222;
+}
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  box-shadow:0 2px 10px rgba(0,0,0,.1);
+  z-index:10;
+}
+nav h1{
+  margin:0;
+  font-weight:700;
+  letter-spacing:1px;
+}
+nav a{
+  text-decoration:none;
+  margin-left:20px;
+  color:#222;
+  font-weight:500;
+}
+.hero{
+  height:100vh;
+  background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+  url('https://images.unsplash.com/photo-1521334884684-d80222895322') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+.hero h2{
+  font-size:3.5rem;
+  margin:0;
+}
+.hero p{
+  font-size:1.2rem;
+  margin-top:10px;
+}
+.section{
+  padding:80px 30px;
+  text-align:center;
+}
+.collections{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:auto;
+}
+.card{
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  background:#fff;
+}
+.card img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+}
+.card h3{
+  margin:15px 0 5px;
+}
+.about{
+  background:#f6f6f6;
+}
+footer{
+  background:#111;
+  color:#fff;
+  padding:40px 20px;
+  text-align:center;
+}
+footer a{
+  color:#fff;
+  text-decoration:none;
+  margin:0 10px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h1>Westernish</h1>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#collection">Collection</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div>
+    <h2>Western Vibes.<br>Bold You.</h2>
+    <p>वेस्टर्निश – Indore’s Trendiest Western Wear Store</p>
+  </div>
+</section>
+
+<section class="section" id="collection">
+  <h2>Our Collection</h2>
+  <div class="collections">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+      <h3>Trendy Tops</h3>
+      <p>Everyday western styles</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+      <h3>Western Dresses</h3>
+      <p>Chic & classy looks</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
+      <h3>Party Wear</h3>
+      <p>Bold & glamorous</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
+      <h3>Co-ord Sets</h3>
+      <p>Modern & comfy</p>
+    </div>
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <h2>About Westernish</h2>
+  <p>
+    Westernish (वेस्टर्निश) is a modern western clothing store in Indore,
+    offering stylish, comfortable and trend-driven fashion for women.
+    From daily looks to party outfits — we style confidence.
+  </p>
+</section>
+
+<section class="section" id="contact">
+  <h2>Visit Our Store</h2>
+  <p>
+    📍 PVXX+3PP, Suyash Enclave, Sheetal Nagar,<br>
+    Indore, Madhya Pradesh 452010
+  </p>
+  <p>⏰ Open: 11 AM – 11 PM</p>
+  <p>📞 DM us on Instagram / WhatsApp for orders</p>
+</section>
+
+<footer>
+  <p>Follow Westernish</p>
+  <a href="#">Instagram</a> |
+  <a href="#">WhatsApp</a>
+  <p style="margin-top:10px;">© 2026 Westernish</p>
+</footer>
+
+</body>
+</html>
