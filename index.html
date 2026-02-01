@@ -8,15 +8,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-/* Smooth Scroll */
-html {
-  scroll-behavior: smooth;
+/* Smooth scroll */
+html{
+  scroll-behavior:smooth;
 }
 
+/* Body fix for fixed navbar */
 body{
   margin:0;
+  padding-top:70px;
   font-family:'Poppins',sans-serif;
-  background:#ffffff;
+  background:#fff;
   color:#222;
 }
 
@@ -29,26 +31,26 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 30px;
+  padding:12px 20px;
   box-shadow:0 2px 10px rgba(0,0,0,.1);
-  z-index:10;
+  z-index:1000;
 }
 nav h1{
   margin:0;
-  font-weight:700;
-  letter-spacing:1px;
+  font-size:22px;
 }
 nav a{
   text-decoration:none;
-  margin-left:20px;
+  margin-left:15px;
   color:#222;
+  font-size:14px;
   font-weight:500;
 }
 
-/* Hero Section */
+/* Hero */
 .hero{
   height:100vh;
-  background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+  background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
   url('https://images.unsplash.com/photo-1521334884684-d80222895322') center/cover no-repeat;
   display:flex;
   align-items:center;
@@ -57,95 +59,109 @@ nav a{
   color:#fff;
 }
 .hero-text{
-  animation: slideUp 1.2s ease forwards;
+  animation:slideUp 1.2s ease forwards;
 }
-@keyframes slideUp {
-  from { opacity:0; transform:translateY(60px); }
-  to { opacity:1; transform:translateY(0); }
+@keyframes slideUp{
+  from{opacity:0;transform:translateY(50px);}
+  to{opacity:1;transform:translateY(0);}
 }
 
 /* Sections */
 .section{
-  padding:80px 30px;
+  padding:60px 20px;
   text-align:center;
 }
 .collections{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
   max-width:1100px;
   margin:auto;
 }
 .card{
   border-radius:12px;
   overflow:hidden;
-  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
   background:#fff;
 }
 .card img{
   width:100%;
-  height:300px;
+  height:240px;
   object-fit:cover;
 }
 .card h3{
-  margin:15px 0 5px;
+  margin:10px 0 5px;
 }
 .about{
   background:#f6f6f6;
 }
 
-/* Fade-in animation */
-.fade-in {
+/* Fade animation */
+.fade-in{
   opacity:0;
   transform:translateY(40px);
-  transition:all 0.8s ease;
+  transition:all .8s ease;
 }
-.fade-in.show {
+.fade-in.show{
   opacity:1;
   transform:translateY(0);
 }
 
-/* Buttons tap animation */
-a, button {
-  transition: transform 0.2s ease;
+/* Tap animation */
+a,button{
+  transition:transform .2s ease;
 }
-a:active, button:active {
-  transform: scale(0.95);
+a:active,button:active{
+  transform:scale(.95);
 }
 
 /* Footer */
 footer{
   background:#111;
   color:#fff;
-  padding:40px 20px;
+  padding:35px 20px;
   text-align:center;
 }
 footer a{
   color:#fff;
   text-decoration:none;
-  margin:0 10px;
+  margin:0 8px;
 }
 
-/* WhatsApp Floating Button */
+/* WhatsApp button */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
   right:20px;
   background:#25D366;
   color:#fff;
-  font-size:28px;
-  width:60px;
-  height:60px;
+  width:58px;
+  height:58px;
   border-radius:50%;
+  font-size:26px;
   display:flex;
   align-items:center;
   justify-content:center;
   text-decoration:none;
   box-shadow:0 4px 15px rgba(0,0,0,.3);
-  z-index:1000;
+  z-index:2000;
 }
-.whatsapp-float:hover{
-  transform:scale(1.1);
+
+/* MOBILE FIX */
+@media(max-width:768px){
+  nav{
+    flex-direction:column;
+  }
+  nav a{
+    margin:6px;
+    font-size:13px;
+  }
+  .hero h2{
+    font-size:2.1rem;
+  }
+  .hero p{
+    font-size:1rem;
+  }
 }
 </style>
 </head>
@@ -175,22 +191,22 @@ footer a{
     <div class="card">
       <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
       <h3>Trendy Tops</h3>
-      <p>Everyday western styles</p>
+      <p>Everyday western</p>
     </div>
     <div class="card">
       <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-      <h3>Western Dresses</h3>
-      <p>Chic & classy looks</p>
+      <h3>Dresses</h3>
+      <p>Chic & classy</p>
     </div>
     <div class="card">
       <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
       <h3>Party Wear</h3>
-      <p>Bold & glamorous</p>
+      <p>Bold looks</p>
     </div>
     <div class="card">
       <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
-      <h3>Co-ord Sets</h3>
-      <p>Modern & comfy</p>
+      <h3>Co-ords</h3>
+      <p>Modern style</p>
     </div>
   </div>
 </section>
@@ -199,8 +215,7 @@ footer a{
   <h2>About Westernish</h2>
   <p>
     Westernish (वेस्टर्निश) is a modern western clothing store in Indore,
-    offering stylish, comfortable and trend-driven fashion for women.
-    From daily looks to party outfits — we style confidence.
+    offering trendy, stylish outfits for women who love bold fashion.
   </p>
 </section>
 
@@ -212,7 +227,6 @@ footer a{
   </p>
   <p>⏰ Open: 11 AM – 11 PM</p>
 
-  <!-- Google Maps Button -->
   <a href="https://www.google.com/maps?q=PVXX+3PP,+Suyash+Enclave,+Sheetal+Nagar,+Indore,+Madhya+Pradesh+452010"
      target="_blank"
      style="display:inline-block;margin-top:15px;padding:12px 25px;
@@ -228,33 +242,28 @@ footer a{
   <p style="margin-top:10px;">© 2026 Westernish</p>
 </footer>
 
-<!-- WhatsApp Chat Button -->
-<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Westernish%20👗%20I%20want%20to%20shop%20from%20your%20store"
+<!-- WhatsApp -->
+<a href="https://wa.me/918103665109?text=Hi%20Westernish%20👗%20I%20want%20to%20shop%20from%20your%20store"
    class="whatsapp-float" target="_blank">💬</a>
 
-<!-- Scroll Animation Script -->
+<!-- Scroll animation -->
 <script>
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold: 0.2 };
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-  entries.forEach(entry => {
-    if(!entry.isIntersecting) return;
-    entry.target.classList.add('show');
-    observer.unobserve(entry.target);
+const faders=document.querySelectorAll('.fade-in');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
   });
-}, appearOptions);
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
+},{threshold:.2});
+faders.forEach(f=>observer.observe(f));
 </script>
 
 </body>
 </html>
 
-</footer>
 
 </body>
 </html>
+
 
