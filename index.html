@@ -9,6 +9,7 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+
 body{
   font-family:'Poppins',sans-serif;
   background:#fff;
@@ -52,7 +53,7 @@ header{
 /* SPACER */
 .spacer{height:110px}
 
-/* SEARCH BAR */
+/* SEARCH */
 .search-box{
   display:none;
   position:fixed;
@@ -90,11 +91,25 @@ header{
   border-bottom:1px solid #eee;
 }
 
-/* SLIDER */
+/* HERO / BANNER (CUT FIXED) */
+.hero{
+  width:100%;
+  background:#000;
+}
 .hero img{
   width:100%;
-  height:70vh;
+  height:80vh;
   object-fit:cover;
+  object-position:center;
+  display:block;
+}
+
+/* MOBILE: FULL IMAGE, NO CUT */
+@media(max-width:768px){
+  .hero img{
+    height:auto;
+    object-fit:contain;
+  }
 }
 
 /* CATEGORIES */
@@ -152,7 +167,7 @@ header{
   cursor:pointer;
 }
 
-/* CART POPUP */
+/* CART */
 .cart{
   display:none;
   position:fixed;
@@ -213,9 +228,9 @@ header{
   <a href="#">Contact</a>
 </div>
 
-<!-- HERO -->
+<!-- HERO BANNER -->
 <div class="hero">
-<img src="images/Gemini_Generated_Image_srt03srt03srt03s.jpg">
+  <img src="images/banner.jpg" alt="Westernish Banner">
 </div>
 
 <!-- CATEGORIES -->
@@ -230,14 +245,14 @@ header{
 <div class="products">
   <div class="card">
     <span class="wishlist" onclick="this.innerHTML='❤️'">♡</span>
-    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+    <img src="images/banner.jpg">
     <div class="price">₹1,499</div>
     <a class="buy" href="https://wa.me/918103665109">Buy on WhatsApp</a>
   </div>
 
   <div class="card">
     <span class="wishlist" onclick="this.innerHTML='❤️'">♡</span>
-    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
+    <img src="images/banner.jpg">
     <div class="price">₹1,999</div>
     <a class="buy" href="https://wa.me/918103665109">Buy on WhatsApp</a>
   </div>
@@ -246,8 +261,7 @@ header{
 <!-- CART -->
 <div class="cart" id="cart">
   <h3>Your Cart</h3>
-  <p>No items added yet</p>
-  <br>
+  <p>No items added yet</p><br>
   <button onclick="toggleCart()">Close</button>
 </div>
 
@@ -273,7 +287,5 @@ function toggleCart(){
 
 </body>
 </html>
-
-
 
 
