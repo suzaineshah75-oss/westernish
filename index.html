@@ -3,160 +3,246 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Westernish | Shop</title>
+<title>Westernish | Western Clothing Store Indore</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --bg:#ffffff;
+  --text:#000000;
+  --card:#f5f5f5;
+  --nav:#ffffff;
+}
+body.dark{
+  --bg:#121212;
+  --text:#ffffff;
+  --card:#1e1e1e;
+  --nav:#1a1a1a;
+}
+
+html{scroll-behavior:smooth}
 body{
   margin:0;
+  padding-top:70px;
   font-family:'Poppins',sans-serif;
-  background:#fff;
-  color:#111;
+  background:var(--bg);
+  color:var(--text);
 }
-header{
-  padding:20px;
-  text-align:center;
-  font-size:26px;
-  font-weight:700;
-}
-.filters{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  padding:10px;
-}
-.filters button{
-  padding:8px 16px;
-  border:none;
+
+/* SALE BANNER */
+.sale{
   background:#000;
   color:#fff;
-  border-radius:20px;
-  cursor:pointer;
+  text-align:center;
+  padding:10px;
   font-size:14px;
 }
-.filters button.active{
-  background:#e91e63;
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;width:100%;
+  background:var(--nav);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
+  box-shadow:0 2px 10px rgba(0,0,0,.2);
+  z-index:1000;
+}
+.menu{
+  display:flex;
+}
+.menu a{
+  margin-left:15px;
+  text-decoration:none;
+  color:var(--text);
+  font-size:14px;
+}
+.hamburger{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+}
+.toggle{
+  cursor:pointer;
+  font-size:18px;
+  margin-right:10px;
+}
+
+/* HERO */
+.hero{
+  height:90vh;
+  background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+  url('https://images.unsplash.com/photo-1521334884684-d80222895322') center/cover;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+/* SECTION */
+.section{
+  padding:60px 20px;
+  text-align:center;
 }
 .products{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:20px;
-  padding:20px;
 }
 .card{
-  border-radius:12px;
-  box-shadow:0 6px 18px rgba(0,0,0,.15);
+  background:var(--card);
+  box-shadow:0 6px 15px rgba(0,0,0,.15);
+  border-radius:10px;
   overflow:hidden;
-  background:#fff;
 }
 .card img{
   width:100%;
-  height:260px;
+  height:230px;
   object-fit:cover;
 }
-.card-content{
-  padding:12px;
-}
-.price{
-  font-weight:700;
-  margin:6px 0;
-}
-.buy{
-  display:block;
-  margin-top:10px;
+.card button{
+  width:100%;
   padding:10px;
-  background:#25D366;
+  background:#000;
   color:#fff;
-  text-align:center;
-  border-radius:25px;
-  text-decoration:none;
-  font-weight:500;
+  border:none;
+  cursor:pointer;
 }
-@media(max-width:600px){
-  header{font-size:22px;}
-  .card img{height:230px;}
+
+/* REVIEWS */
+.review{
+  background:var(--card);
+  padding:20px;
+  margin:10px auto;
+  max-width:500px;
+  border-radius:10px;
+}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+.popup-content{
+  background:var(--bg);
+  padding:20px;
+  border-radius:10px;
+  max-width:300px;
+}
+
+/* BOTTOM BAR */
+.bottom-bar{
+  position:fixed;
+  bottom:0;width:100%;
+  background:var(--nav);
+  display:flex;
+  justify-content:space-around;
+  box-shadow:0 -2px 10px rgba(0,0,0,.3);
+}
+.bottom-bar a{
+  padding:12px;
+  text-decoration:none;
+  color:var(--text);
+  font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .menu{display:none;flex-direction:column}
+  .menu.show{display:flex}
+  .hamburger{display:block}
 }
 </style>
 </head>
 
 <body>
 
-<header>🛍️ Westernish Collection</header>
+<div class="sale">🔥 NEW ARRIVALS | Flat 20% OFF</div>
 
-<!-- FILTER BUTTONS -->
-<div class="filters">
-  <button class="active" onclick="filterItems('all')">All</button>
-  <button onclick="filterItems('tops')">Tops</button>
-  <button onclick="filterItems('dress')">Dresses</button>
-  <button onclick="filterItems('party')">Party Wear</button>
-  <button onclick="filterItems('coords')">Co-ords</button>
+<nav>
+  <strong>Westernish</strong>
+  <div>
+    <span class="toggle" onclick="toggleDark()">🌙</span>
+    <span class="hamburger" onclick="toggleMenu()">☰</span>
+  </div>
+  <div class="menu" id="menu">
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div>
+    <h1>Western Vibes. Bold You.</h1>
+    <p>Indore’s Trendiest Western Wear Store</p>
+  </div>
+</section>
+
+<section class="section" id="shop">
+<h2>Shop Collection</h2>
+<div class="products">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+    <button onclick="openPopup()">View</button>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
+    <button onclick="openPopup()">View</button>
+  </div>
+</div>
+</section>
+
+<section class="section" id="reviews">
+<h2>Customer Reviews</h2>
+<div class="review">⭐⭐⭐⭐⭐ Amazing quality – Neha</div>
+<div class="review">⭐⭐⭐⭐⭐ Best western store – Aarti</div>
+</section>
+
+<section class="section" id="contact">
+<h2>Visit Store</h2>
+<p>📍 Sheetal Nagar, Indore</p>
+</section>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h3>Trendy Outfit</h3>
+    <p>Buy now on WhatsApp</p>
+    <a href="https://wa.me/918103665109" target="_blank">💬 WhatsApp</a><br><br>
+    <button onclick="closePopup()">Close</button>
+  </div>
 </div>
 
-<!-- PRODUCTS -->
-<div class="products">
-
-  <div class="card item dress">
-    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-    <div class="card-content">
-      <h4>Western Dress</h4>
-      <div class="price">₹1,499</div>
-      <a class="buy" href="https://wa.me/918103665109?text=I%20want%20to%20buy%20this%20Western%20Dress" target="_blank">
-        Buy on WhatsApp
-      </a>
-    </div>
-  </div>
-
-  <div class="card item tops">
-    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-    <div class="card-content">
-      <h4>Trendy Top</h4>
-      <div class="price">₹799</div>
-      <a class="buy" href="https://wa.me/918103665109?text=I%20want%20to%20buy%20this%20Trendy%20Top" target="_blank">
-        Buy on WhatsApp
-      </a>
-    </div>
-  </div>
-
-  <div class="card item party">
-    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
-    <div class="card-content">
-      <h4>Party Outfit</h4>
-      <div class="price">₹1,999</div>
-      <a class="buy" href="https://wa.me/918103665109?text=I%20want%20to%20buy%20this%20Party%20Outfit" target="_blank">
-        Buy on WhatsApp
-      </a>
-    </div>
-  </div>
-
-  <div class="card item coords">
-    <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
-    <div class="card-content">
-      <h4>Co-ord Set</h4>
-      <div class="price">₹1,299</div>
-      <a class="buy" href="https://wa.me/918103665109?text=I%20want%20to%20buy%20this%20Co-ord%20Set" target="_blank">
-        Buy on WhatsApp
-      </a>
-    </div>
-  </div>
-
+<!-- BOTTOM BAR -->
+<div class="bottom-bar">
+  <a href="https://wa.me/918103665109">💬 WhatsApp</a>
+  <a href="tel:8103665109">📞 Call</a>
+  <a href="https://www.google.com/maps?q=PVXX+3PP+Indore">📍 Map</a>
 </div>
 
 <script>
-function filterItems(category){
-  let items=document.querySelectorAll('.item');
-  let buttons=document.querySelectorAll('.filters button');
-  buttons.forEach(btn=>btn.classList.remove('active'));
-  event.target.classList.add('active');
-
-  items.forEach(item=>{
-    if(category==='all' || item.classList.contains(category)){
-      item.style.display='block';
-    }else{
-      item.style.display='none';
-    }
-  });
+function toggleMenu(){
+  document.getElementById('menu').classList.toggle('show');
+}
+function openPopup(){
+  document.getElementById('popup').style.display='flex';
+}
+function closePopup(){
+  document.getElementById('popup').style.display='none';
+}
+function toggleDark(){
+  document.body.classList.toggle('dark');
 }
 </script>
 
