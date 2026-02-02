@@ -3,87 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Westernish | Western Clothing Store Indore</title>
+<title>Westernish | Premium Western Wear</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+/* THEME */
 :root{
   --bg:#ffffff;
-  --text:#000000;
-  --card:#f5f5f5;
+  --text:#111;
   --nav:#ffffff;
+  --card:#f5f5f5;
 }
 body.dark{
   --bg:#121212;
   --text:#ffffff;
-  --card:#1e1e1e;
   --nav:#1a1a1a;
+  --card:#1f1f1f;
 }
 
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  padding-top:70px;
+  padding-top:64px;
   font-family:'Poppins',sans-serif;
   background:var(--bg);
   color:var(--text);
 }
 
-/* SALE BANNER */
-.sale{
-  background:#000;
-  color:#fff;
-  text-align:center;
-  padding:10px;
-  font-size:14px;
-}
-
-/* NAVBAR */
+/* PREMIUM HEADER */
 nav{
   position:fixed;
-  top:0;width:100%;
+  top:0;
+  width:100%;
   background:var(--nav);
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:10px 20px;
-  box-shadow:0 2px 10px rgba(0,0,0,.2);
+  padding:12px 16px;
+  box-shadow:0 2px 12px rgba(0,0,0,.12);
   z-index:1000;
 }
-.menu{
-  display:flex;
-}
-.menu a{
-  margin-left:15px;
-  text-decoration:none;
-  color:var(--text);
-  font-size:14px;
-}
-.hamburger{
-  display:none;
-  font-size:22px;
-  cursor:pointer;
-}
-.toggle{
-  cursor:pointer;
+nav strong{
   font-size:18px;
-  margin-right:10px;
+  letter-spacing:.5px;
 }
 
-/* HERO */
-.hero{
-  height:90vh;
-  background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-  url('https://images.unsplash.com/photo-1521334884684-d80222895322') center/cover;
+/* ICONS RIGHT */
+.nav-icons{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* DARK MODE BUTTON */
+.toggle{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#eee;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  font-size:16px;
+}
+body.dark .toggle{background:#333}
+
+/* HAMBURGER BUTTON */
+.hamburger{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#000;
   color:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
+  font-size:20px;
+  cursor:pointer;
 }
 
-/* SECTION */
+/* MENU */
+.menu{
+  position:absolute;
+  top:64px;
+  left:0;
+  width:100%;
+  background:var(--nav);
+  display:none;
+  flex-direction:column;
+  text-align:center;
+}
+.menu.show{display:flex}
+.menu a{
+  padding:14px;
+  text-decoration:none;
+  color:var(--text);
+  border-bottom:1px solid #ddd;
+}
+
+/* HERO */
+.hero{
+  height:88vh;
+  background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+  url('https://images.unsplash.com/photo-1521334884684-d80222895322') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+.hero h1{
+  font-size:2.4rem;
+}
+.hero p{
+  font-size:1rem;
+}
+
+/* SECTIONS */
 .section{
   padding:60px 20px;
   text-align:center;
@@ -95,22 +133,21 @@ nav{
 }
 .card{
   background:var(--card);
-  box-shadow:0 6px 15px rgba(0,0,0,.15);
-  border-radius:10px;
+  border-radius:12px;
   overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
 }
 .card img{
   width:100%;
-  height:230px;
+  height:220px;
   object-fit:cover;
 }
 .card button{
   width:100%;
   padding:10px;
+  border:none;
   background:#000;
   color:#fff;
-  border:none;
-  cursor:pointer;
 }
 
 /* REVIEWS */
@@ -122,31 +159,15 @@ nav{
   border-radius:10px;
 }
 
-/* POPUP */
-.popup{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,.6);
-  display:none;
-  align-items:center;
-  justify-content:center;
-}
-.popup-content{
-  background:var(--bg);
-  padding:20px;
-  border-radius:10px;
-  max-width:300px;
-}
-
 /* BOTTOM BAR */
 .bottom-bar{
   position:fixed;
-  bottom:0;width:100%;
+  bottom:0;
+  width:100%;
   background:var(--nav);
   display:flex;
   justify-content:space-around;
-  box-shadow:0 -2px 10px rgba(0,0,0,.3);
+  box-shadow:0 -2px 12px rgba(0,0,0,.25);
 }
 .bottom-bar a{
   padding:12px;
@@ -154,26 +175,20 @@ nav{
   color:var(--text);
   font-size:14px;
 }
-
-/* MOBILE */
-@media(max-width:768px){
-  .menu{display:none;flex-direction:column}
-  .menu.show{display:flex}
-  .hamburger{display:block}
-}
 </style>
 </head>
 
 <body>
 
-<div class="sale">🔥 NEW ARRIVALS | Flat 20% OFF</div>
-
+<!-- HEADER -->
 <nav>
   <strong>Westernish</strong>
-  <div>
-    <span class="toggle" onclick="toggleDark()">🌙</span>
-    <span class="hamburger" onclick="toggleMenu()">☰</span>
+
+  <div class="nav-icons">
+    <div class="toggle" onclick="toggleDark()">🌙</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
+
   <div class="menu" id="menu">
     <a href="#home">Home</a>
     <a href="#shop">Shop</a>
@@ -182,47 +197,41 @@ nav{
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="home">
   <div>
-    <h1>Western Vibes. Bold You.</h1>
+    <h1>Western Vibes.<br>Bold You.</h1>
     <p>Indore’s Trendiest Western Wear Store</p>
   </div>
 </section>
 
+<!-- SHOP -->
 <section class="section" id="shop">
-<h2>Shop Collection</h2>
-<div class="products">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-    <button onclick="openPopup()">View</button>
+  <h2>Shop Collection</h2>
+  <div class="products">
+    <div class="card">
+      <img src="images/dress1.jpg">
+      <button>View</button>
+    </div>
+    <div class="card">
+      <img src="images/top1.jpg">
+      <button>View</button>
+    </div>
   </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
-    <button onclick="openPopup()">View</button>
-  </div>
-</div>
 </section>
 
+<!-- REVIEWS -->
 <section class="section" id="reviews">
-<h2>Customer Reviews</h2>
-<div class="review">⭐⭐⭐⭐⭐ Amazing quality – Neha</div>
-<div class="review">⭐⭐⭐⭐⭐ Best western store – Aarti</div>
+  <h2>Customer Reviews</h2>
+  <div class="review">⭐⭐⭐⭐⭐ Loved the quality – Neha</div>
+  <div class="review">⭐⭐⭐⭐⭐ Best store in Indore – Aarti</div>
 </section>
 
+<!-- CONTACT -->
 <section class="section" id="contact">
-<h2>Visit Store</h2>
-<p>📍 Sheetal Nagar, Indore</p>
+  <h2>Visit Store</h2>
+  <p>📍 Sheetal Nagar, Indore</p>
 </section>
-
-<!-- POPUP -->
-<div class="popup" id="popup">
-  <div class="popup-content">
-    <h3>Trendy Outfit</h3>
-    <p>Buy now on WhatsApp</p>
-    <a href="https://wa.me/918103665109" target="_blank">💬 WhatsApp</a><br><br>
-    <button onclick="closePopup()">Close</button>
-  </div>
-</div>
 
 <!-- BOTTOM BAR -->
 <div class="bottom-bar">
@@ -232,26 +241,22 @@ nav{
 </div>
 
 <script>
+/* MENU */
 function toggleMenu(){
   document.getElementById('menu').classList.toggle('show');
 }
-function openPopup(){
-  document.getElementById('popup').style.display='flex';
-}
-function closePopup(){
-  document.getElementById('popup').style.display='none';
-}
+
+/* DARK MODE WITH SAVE */
 function toggleDark(){
   document.body.classList.toggle('dark');
+  localStorage.setItem('theme',
+    document.body.classList.contains('dark') ? 'dark' : 'light'
+  );
+}
+if(localStorage.getItem('theme')==='dark'){
+  document.body.classList.add('dark');
 }
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
