@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Westernish | Women Fashion</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -13,63 +13,87 @@ body{
   font-family:'Poppins',sans-serif;
   background:#fff;
   color:#111;
-  padding-bottom:72px;
+  padding-bottom:70px;
 }
 
 /* HEADER */
 header{
   position:fixed;
-  top:0; left:0;
+  top:0;
   width:100%;
   height:60px;
   background:#fff;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 16px;
-  box-shadow:0 2px 8px rgba(0,0,0,.08);
+  padding:0 18px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
   z-index:1000;
 }
-.logo{font-weight:700;font-size:18px}
-.icons span{
-  font-size:20px;
-  margin-left:16px;
-  cursor:pointer;
+.logo{
+  font-weight:700;
+  font-size:18px;
+}
+.icons{
+  font-size:18px;
 }
 
 /* SPACER */
 .spacer{height:60px}
 
 /* HERO */
+.hero{
+  position:relative;
+}
 .hero img{
   width:100%;
-  display:block;
+  height:80vh;
+  object-fit:cover;
+}
+.hero-text{
+  position:absolute;
+  bottom:18%;
+  left:8%;
+  color:#fff;
+}
+.hero-text h1{
+  font-size:32px;
+  line-height:1.2;
+}
+.hero-text a{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 22px;
+  background:#fff;
+  color:#000;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:600;
 }
 
 /* SECTION */
 .section{
-  padding:32px 16px;
+  padding:40px 18px;
 }
 .section h2{
-  font-size:20px;
-  margin-bottom:16px;
+  font-size:22px;
+  margin-bottom:20px;
 }
 
 /* PRODUCTS */
 .products{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:16px;
+  gap:18px;
 }
 .card{
-  background:#fff;
-  border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,.12);
+  border-radius:14px;
   overflow:hidden;
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
 }
 .card img{
   width:100%;
-  height:200px;
+  height:260px;
   object-fit:cover;
 }
 .card-body{
@@ -77,80 +101,36 @@ header{
 }
 .card-body h4{
   font-size:15px;
-  line-height:1.3;
 }
 .price{
   font-weight:600;
-  margin:6px 0 10px;
+  margin:6px 0;
 }
 .buy{
   display:block;
   text-align:center;
+  padding:9px;
   background:#25D366;
   color:#fff;
-  padding:8px;
-  border-radius:20px;
+  border-radius:22px;
   text-decoration:none;
   font-size:14px;
-}
-
-/* POPUPS */
-.popup{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.55);
-  z-index:5000;
-  align-items:center;
-  justify-content:center;
-}
-.popup-box{
-  background:#fff;
-  width:90%;
-  max-width:420px;
-  border-radius:14px;
-  padding:20px;
-}
-.popup-box h3{
-  margin-bottom:12px;
-}
-.close{
-  text-align:right;
-  font-size:18px;
-  cursor:pointer;
-}
-
-/* SEARCH */
-.search-input{
-  width:100%;
-  padding:10px;
-  border:1px solid #ddd;
-  border-radius:10px;
-  margin-bottom:12px;
-}
-.search-result{
-  font-size:14px;
-  padding:6px 0;
-  border-bottom:1px solid #eee;
 }
 
 /* BOTTOM BAR */
 .bottom-bar{
   position:fixed;
-  bottom:0; left:0;
+  bottom:0;
   width:100%;
-  height:56px;
   background:#25D366;
   display:flex;
   justify-content:space-around;
-  align-items:center;
-  z-index:1000;
+  padding:12px 0;
 }
 .bottom-bar a{
   color:#fff;
   text-decoration:none;
   font-weight:600;
-  font-size:14px;
 }
 </style>
 </head>
@@ -159,52 +139,89 @@ header{
 
 <header>
   <div class="logo">Westernish</div>
-  <div class="icons">
-    <span onclick="openPopup('menuPopup')">☰</span>
-    <span onclick="openPopup('searchPopup')">🔍</span>
-    <span onclick="openPopup('wishPopup')">♡</span>
-  </div>
+  <div class="icons">Women Only</div>
 </header>
 
 <div class="spacer"></div>
 
 <!-- HERO -->
 <div class="hero">
-  <img src="images/Gemini_Generated_Image_srt03srt03srt03s.jpg" alt="Westernish Banner">
-</div>
-
-<!-- CONTENT -->
-<div id="content"></div>
-
-<!-- MENU -->
-<div class="popup" id="menuPopup">
-  <div class="popup-box">
-    <div class="close" onclick="closePopup('menuPopup')">✖</div>
-    <h3>Categories</h3>
-    <p>Summer Wear</p>
-    <p>Winter Wear</p>
-    <p>Suits</p>
-    <p>Kurtis</p>
-    <p>Tops</p>
-    <p>Jeans</p>
-    <p>Shirts</p>
+  <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+  <div class="hero-text">
+    <h1>Elegant Styles<br>For Modern Women</h1>
+    <a href="#shop">Shop Now</a>
   </div>
 </div>
 
-<!-- SEARCH -->
-<div class="popup" id="searchPopup">
-  <div class="popup-box">
-    <div class="close" onclick="closePopup('searchPopup')">✖</div>
-    <input class="search-input" placeholder="Search women products..." oninput="searchProducts(this.value)">
-    <div id="searchResults"></div>
+<!-- SUMMER -->
+<div class="section" id="shop">
+  <h2>Summer Wear</h2>
+  <div class="products">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1542060748-10c28b62716c">
+      <div class="card-body">
+        <h4>Floral Summer Dress</h4>
+        <div class="price">₹1,299</div>
+        <a class="buy" href="https://wa.me/918103665109">Buy on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1">
+      <div class="card-body">
+        <h4>Casual Cotton Kurti</h4>
+        <div class="price">₹999</div>
+        <a class="buy" href="https://wa.me/918103665109">Buy on WhatsApp</a>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- WISHLIST -->
-<div class="popup" id="wishPopup">
-  <div class="popup-box">
-    <div class="close" onclick="closePopup('wishPopup')">✖</div>
-    <p>Wishlist coming soon ❤️</p>
+<!-- KURTIS -->
+<div class="section">
+  <h2>Kurtis</h2>
+  <div class="products">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
+      <div class="card-body">
+        <h4>Printed Kurti</h4>
+        <div class="price">₹1,099</div>
+        <a class="buy" href="https://wa.me/918103665109">Buy on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1618354691438-25bc04584c23">
+      <div class="card-body">
+        <h4>Straight Fit Kurti</h4>
+        <div class="price">₹1,199</div>
+        <a class="buy" href="https://wa.me/918103665109">Buy on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPS -->
+<div class="section">
+  <h2>Tops</h2>
+  <div class="products">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
+      <div class="card-body">
+        <h4>Stylish Top</h4>
+        <div class="price">₹799</div>
+        <a class="buy" href="https://wa.me/918103665109">Buy on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3">
+      <div class="card-body">
+        <h4>Casual Shirt</h4>
+        <div class="price">₹1,199</div>
+        <a class="buy" href="https://wa.me/918103665109">Buy on WhatsApp</a>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -215,68 +232,6 @@ header{
   <a href="https://www.google.com/maps?q=PVXX+3PP+Indore">📍 Map</a>
 </div>
 
-<script>
-const products = [
-  {name:"Floral Summer Dress",price:1299,cat:"Summer Wear"},
-  {name:"Cotton Summer Kurti",price:999,cat:"Summer Wear"},
-  {name:"Warm Winter Jacket",price:1899,cat:"Winter Wear"},
-  {name:"Woolen Shrug",price:1499,cat:"Winter Wear"},
-  {name:"Elegant Suit Set",price:2499,cat:"Suits"},
-  {name:"Printed Kurti",price:999,cat:"Kurtis"},
-  {name:"Straight Kurti",price:1199,cat:"Kurtis"},
-  {name:"Trendy Top",price:799,cat:"Tops"},
-  {name:"Casual Top",price:899,cat:"Tops"},
-  {name:"High Waist Jeans",price:1599,cat:"Jeans"},
-  {name:"Slim Fit Jeans",price:1399,cat:"Jeans"},
-  {name:"Casual Shirt",price:1199,cat:"Shirts"}
-];
-
-const content = document.getElementById("content");
-
-function renderProducts(){
-  const grouped = {};
-  products.forEach(p=>{
-    if(!grouped[p.cat]) grouped[p.cat]=[];
-    grouped[p.cat].push(p);
-  });
-
-  let html="";
-  for(const cat in grouped){
-    html += `<div class="section"><h2>${cat}</h2><div class="products">`;
-    grouped[cat].forEach(p=>{
-      html += `
-        <div class="card">
-          <img src="images/Gemini_Generated_Image_srt03srt03srt03s.jpg">
-          <div class="card-body">
-            <h4>${p.name}</h4>
-            <div class="price">₹${p.price}</div>
-            <a class="buy" href="https://wa.me/918103665109?text=Hi, I want to order ${encodeURIComponent(p.name)} for ₹${p.price}">
-              Buy on WhatsApp
-            </a>
-          </div>
-        </div>`;
-    });
-    html += `</div></div>`;
-  }
-  content.innerHTML = html;
-}
-
-renderProducts();
-
-function searchProducts(query){
-  const q = query.toLowerCase();
-  const results = products.filter(p=>p.name.toLowerCase().includes(q));
-  const box = document.getElementById("searchResults");
-  box.innerHTML = results.length
-    ? results.map(p=>`<div class="search-result">${p.name} – ₹${p.price}</div>`).join("")
-    : "<p>No products found</p>";
-}
-
-function openPopup(id){document.getElementById(id).style.display="flex";}
-function closePopup(id){document.getElementById(id).style.display="none";}
-</script>
-
 </body>
 </html>
-
 
