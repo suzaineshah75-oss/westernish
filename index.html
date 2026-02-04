@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Westernish | Women Fashion</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-
 body{
   font-family:'Poppins',sans-serif;
   background:#fff;
   color:#111;
-  padding-bottom:70px;
+  padding-bottom:72px;
 }
 
 /* HEADER */
 header{
   position:fixed;
-  top:0;
+  top:0; left:0;
   width:100%;
+  height:60px;
   background:#fff;
-  padding:12px 16px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  box-shadow:0 2px 10px rgba(0,0,0,.1);
+  justify-content:space-between;
+  padding:0 16px;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
   z-index:1000;
 }
 .logo{font-weight:700;font-size:18px}
 .icons span{
   font-size:20px;
-  margin-left:14px;
+  margin-left:16px;
   cursor:pointer;
 }
 
@@ -43,15 +43,15 @@ header{
 /* HERO */
 .hero img{
   width:100%;
-  height:auto;
   display:block;
 }
 
 /* SECTION */
 .section{
-  padding:30px 16px;
+  padding:32px 16px;
 }
 .section h2{
+  font-size:20px;
   margin-bottom:16px;
 }
 
@@ -62,8 +62,9 @@ header{
   gap:16px;
 }
 .card{
+  background:#fff;
   border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
   overflow:hidden;
 }
 .card img{
@@ -71,24 +72,26 @@ header{
   height:200px;
   object-fit:cover;
 }
-.card-content{
-  padding:10px;
+.card-body{
+  padding:12px;
 }
-.card-content h4{
+.card-body h4{
   font-size:15px;
+  line-height:1.3;
 }
 .price{
   font-weight:600;
-  margin:6px 0;
+  margin:6px 0 10px;
 }
 .buy{
   display:block;
   text-align:center;
-  padding:8px;
   background:#25D366;
   color:#fff;
+  padding:8px;
   border-radius:20px;
   text-decoration:none;
+  font-size:14px;
 }
 
 /* POPUPS */
@@ -97,7 +100,7 @@ header{
   position:fixed;
   inset:0;
   background:rgba(0,0,0,.55);
-  z-index:9999;
+  z-index:5000;
   align-items:center;
   justify-content:center;
 }
@@ -105,8 +108,11 @@ header{
   background:#fff;
   width:90%;
   max-width:420px;
-  padding:20px;
   border-radius:14px;
+  padding:20px;
+}
+.popup-box h3{
+  margin-bottom:12px;
 }
 .close{
   text-align:right;
@@ -120,23 +126,31 @@ header{
   padding:10px;
   border:1px solid #ddd;
   border-radius:10px;
-  margin-bottom:10px;
+  margin-bottom:12px;
+}
+.search-result{
+  font-size:14px;
+  padding:6px 0;
+  border-bottom:1px solid #eee;
 }
 
 /* BOTTOM BAR */
 .bottom-bar{
   position:fixed;
-  bottom:0;
+  bottom:0; left:0;
   width:100%;
+  height:56px;
   background:#25D366;
   display:flex;
   justify-content:space-around;
-  padding:12px 0;
+  align-items:center;
+  z-index:1000;
 }
 .bottom-bar a{
   color:#fff;
   text-decoration:none;
   font-weight:600;
+  font-size:14px;
 }
 </style>
 </head>
@@ -146,47 +160,55 @@ header{
 <header>
   <div class="logo">Westernish</div>
   <div class="icons">
-    <span onclick="openPopup('menu')">☰</span>
-    <span onclick="openPopup('search')">🔍</span>
-    <span onclick="openPopup('wish')">♡</span>
+    <span onclick="openPopup('menuPopup')">☰</span>
+    <span onclick="openPopup('searchPopup')">🔍</span>
+    <span onclick="openPopup('wishPopup')">♡</span>
   </div>
 </header>
 
 <div class="spacer"></div>
 
+<!-- HERO -->
 <div class="hero">
-  <img src="images/Gemini_Generated_Image_srt03srt03srt03s.jpg">
+  <img src="images/Gemini_Generated_Image_srt03srt03srt03s.jpg" alt="Westernish Banner">
 </div>
 
+<!-- CONTENT -->
 <div id="content"></div>
 
 <!-- MENU -->
-<div class="popup" id="menu">
+<div class="popup" id="menuPopup">
   <div class="popup-box">
-    <div class="close" onclick="closePopup('menu')">✖</div>
+    <div class="close" onclick="closePopup('menuPopup')">✖</div>
     <h3>Categories</h3>
-    <p>Summer Wear</p><p>Winter Wear</p><p>Suits</p><p>Kurtis</p>
-    <p>Tops</p><p>Jeans</p><p>Shirts</p>
+    <p>Summer Wear</p>
+    <p>Winter Wear</p>
+    <p>Suits</p>
+    <p>Kurtis</p>
+    <p>Tops</p>
+    <p>Jeans</p>
+    <p>Shirts</p>
   </div>
 </div>
 
 <!-- SEARCH -->
-<div class="popup" id="search">
+<div class="popup" id="searchPopup">
   <div class="popup-box">
-    <div class="close" onclick="closePopup('search')">✖</div>
-    <input class="search-input" placeholder="Search products..." oninput="searchProducts(this.value)">
+    <div class="close" onclick="closePopup('searchPopup')">✖</div>
+    <input class="search-input" placeholder="Search women products..." oninput="searchProducts(this.value)">
     <div id="searchResults"></div>
   </div>
 </div>
 
 <!-- WISHLIST -->
-<div class="popup" id="wish">
+<div class="popup" id="wishPopup">
   <div class="popup-box">
-    <div class="close" onclick="closePopup('wish')">✖</div>
-    <p>Wishlist feature coming soon ❤️</p>
+    <div class="close" onclick="closePopup('wishPopup')">✖</div>
+    <p>Wishlist coming soon ❤️</p>
   </div>
 </div>
 
+<!-- BOTTOM BAR -->
 <div class="bottom-bar">
   <a href="https://wa.me/918103665109">💬 WhatsApp</a>
   <a href="tel:8103665109">📞 Call</a>
@@ -196,47 +218,58 @@ header{
 <script>
 const products = [
   {name:"Floral Summer Dress",price:1299,cat:"Summer Wear"},
+  {name:"Cotton Summer Kurti",price:999,cat:"Summer Wear"},
   {name:"Warm Winter Jacket",price:1899,cat:"Winter Wear"},
+  {name:"Woolen Shrug",price:1499,cat:"Winter Wear"},
   {name:"Elegant Suit Set",price:2499,cat:"Suits"},
   {name:"Printed Kurti",price:999,cat:"Kurtis"},
+  {name:"Straight Kurti",price:1199,cat:"Kurtis"},
   {name:"Trendy Top",price:799,cat:"Tops"},
+  {name:"Casual Top",price:899,cat:"Tops"},
   {name:"High Waist Jeans",price:1599,cat:"Jeans"},
+  {name:"Slim Fit Jeans",price:1399,cat:"Jeans"},
   {name:"Casual Shirt",price:1199,cat:"Shirts"}
 ];
 
-const content=document.getElementById("content");
+const content = document.getElementById("content");
 
-function render(){
-  let grouped={};
+function renderProducts(){
+  const grouped = {};
   products.forEach(p=>{
-    grouped[p.cat]=grouped[p.cat]||[];
+    if(!grouped[p.cat]) grouped[p.cat]=[];
     grouped[p.cat].push(p);
   });
-  let html="";
-  for(let cat in grouped){
-    html+=`<div class="section"><h2>${cat}</h2><div class="products">`;
-    grouped[cat].forEach(p=>{
-      html+=`
-      <div class="card">
-        <img src="images/Gemini_Generated_Image_srt03srt03srt03s.jpg">
-        <div class="card-content">
-          <h4>${p.name}</h4>
-          <div class="price">₹${p.price}</div>
-          <a class="buy" href="https://wa.me/918103665109?text=Hi, I want to order ${p.name} for ₹${p.price}">
-            Buy on WhatsApp
-          </a>
-        </div>
-      </div>`;
-    });
-    html+=`</div></div>`;
-  }
-  content.innerHTML=html;
-}
-render();
 
-function searchProducts(q){
-  let res=products.filter(p=>p.name.toLowerCase().includes(q.toLowerCase()));
-  document.getElementById("searchResults").innerHTML=res.map(p=>`<p>${p.name} – ₹${p.price}</p>`).join("");
+  let html="";
+  for(const cat in grouped){
+    html += `<div class="section"><h2>${cat}</h2><div class="products">`;
+    grouped[cat].forEach(p=>{
+      html += `
+        <div class="card">
+          <img src="images/Gemini_Generated_Image_srt03srt03srt03s.jpg">
+          <div class="card-body">
+            <h4>${p.name}</h4>
+            <div class="price">₹${p.price}</div>
+            <a class="buy" href="https://wa.me/918103665109?text=Hi, I want to order ${encodeURIComponent(p.name)} for ₹${p.price}">
+              Buy on WhatsApp
+            </a>
+          </div>
+        </div>`;
+    });
+    html += `</div></div>`;
+  }
+  content.innerHTML = html;
+}
+
+renderProducts();
+
+function searchProducts(query){
+  const q = query.toLowerCase();
+  const results = products.filter(p=>p.name.toLowerCase().includes(q));
+  const box = document.getElementById("searchResults");
+  box.innerHTML = results.length
+    ? results.map(p=>`<div class="search-result">${p.name} – ₹${p.price}</div>`).join("")
+    : "<p>No products found</p>";
 }
 
 function openPopup(id){document.getElementById(id).style.display="flex";}
@@ -245,4 +278,5 @@ function closePopup(id){document.getElementById(id).style.display="none";}
 
 </body>
 </html>
+
 
