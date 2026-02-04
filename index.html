@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Westernish | Premium Fashion</title>
+<title>Westernish</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+
 body{
   font-family:'Poppins',sans-serif;
   background:#fff;
@@ -36,10 +37,14 @@ header{
   cursor:pointer;
 }
 
-/* SPACER */
+/* SPACE FOR HEADER */
 .spacer{height:60px}
 
-/* HERO */
+/* HERO / BANNER */
+.hero{
+  width:100%;
+  background:#000;
+}
 .hero img{
   width:100%;
   height:auto;
@@ -50,10 +55,8 @@ header{
 .popup{
   display:none;
   position:fixed;
-  top:0;left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,.5);
+  inset:0;
+  background:rgba(0,0,0,.55);
   z-index:9999;
   align-items:center;
   justify-content:center;
@@ -63,7 +66,10 @@ header{
   width:90%;
   max-width:400px;
   padding:20px;
-  border-radius:12px;
+  border-radius:14px;
+}
+.popup-box h3{
+  margin-bottom:10px;
 }
 .close{
   text-align:right;
@@ -92,13 +98,14 @@ header{
 
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="logo">Westernish</div>
   <div class="icons">
-    <span onclick="openPopup('menuPopup')">☰</span>
-    <span onclick="openPopup('searchPopup')">🔍</span>
-    <span onclick="openPopup('wishPopup')">♡</span>
-    <span onclick="openPopup('cartPopup')">🛍️</span>
+    <span onclick="openPopup('menu')">☰</span>
+    <span onclick="openPopup('search')">🔍</span>
+    <span onclick="openPopup('wish')">♡</span>
+    <span onclick="openPopup('cart')">🛍️</span>
   </div>
 </header>
 
@@ -106,45 +113,49 @@ header{
 
 <!-- HERO -->
 <div class="hero">
-  <img src="images/Gemini_Generated_Image_srt03srt03srt03s.jpg">
+  <img src="images/Gemini_Generated_Image_srt03srt03srt03s.jpg" alt="Banner">
 </div>
 
-<!-- POPUPS -->
-
-<div class="popup" id="menuPopup">
+<!-- MENU POPUP -->
+<div class="popup" id="menu">
   <div class="popup-box">
-    <div class="close" onclick="closePopup('menuPopup')">✖</div>
-    <p><b>Menu</b></p><br>
+    <div class="close" onclick="closePopup('menu')">✖</div>
+    <h3>Menu</h3>
     <p>Home</p>
     <p>Shop</p>
     <p>Contact</p>
   </div>
 </div>
 
-<div class="popup" id="searchPopup">
+<!-- SEARCH POPUP -->
+<div class="popup" id="search">
   <div class="popup-box">
-    <div class="close" onclick="closePopup('searchPopup')">✖</div>
-    <p><b>Search</b></p><br>
-    <input type="text" placeholder="Search products..." style="width:100%;padding:10px">
+    <div class="close" onclick="closePopup('search')">✖</div>
+    <h3>Search</h3>
+    <input type="text" placeholder="Search products..."
+           style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px">
   </div>
 </div>
 
-<div class="popup" id="wishPopup">
+<!-- WISHLIST POPUP -->
+<div class="popup" id="wish">
   <div class="popup-box">
-    <div class="close" onclick="closePopup('wishPopup')">✖</div>
-    <p><b>Wishlist</b></p><br>
-    <p>No items in wishlist ❤️</p>
+    <div class="close" onclick="closePopup('wish')">✖</div>
+    <h3>Wishlist</h3>
+    <p>No items yet ❤️</p>
   </div>
 </div>
 
-<div class="popup" id="cartPopup">
+<!-- CART POPUP -->
+<div class="popup" id="cart">
   <div class="popup-box">
-    <div class="close" onclick="closePopup('cartPopup')">✖</div>
-    <p><b>Cart</b></p><br>
-    <p>Your cart is empty 🛍️</p>
-    <br>
-    <a href="https://wa.me/918103665109" style="display:block;text-align:center;background:#25D366;color:#fff;padding:10px;border-radius:20px;text-decoration:none">
-      Shop on WhatsApp
+    <div class="close" onclick="closePopup('cart')">✖</div>
+    <h3>Cart</h3>
+    <p>Your cart is empty</p><br>
+    <a href="https://wa.me/918103665109"
+       style="display:block;text-align:center;background:#25D366;
+       color:#fff;padding:10px;border-radius:20px;text-decoration:none">
+       Shop on WhatsApp
     </a>
   </div>
 </div>
@@ -158,14 +169,12 @@ header{
 
 <script>
 function openPopup(id){
-  document.getElementById(id).style.display="flex";
+  document.getElementById(id).style.display='flex';
 }
 function closePopup(id){
-  document.getElementById(id).style.display="none";
+  document.getElementById(id).style.display='none';
 }
 </script>
 
 </body>
 </html>
-
-
