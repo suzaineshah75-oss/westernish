@@ -149,6 +149,42 @@ header{
   color:#fff;
   text-decoration:none;
   font-weight:600;
+  /* REVIEWS */
+.reviews{
+  background:#fff;
+  text-align:center;
+}
+.review-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+  margin-top:20px;
+}
+.review-card{
+  background:#faf9f7;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+.review-card p{
+  font-size:14px;
+  color:#333;
+  line-height:1.6;
+}
+.review-card h4{
+  margin-top:12px;
+  font-size:14px;
+  font-weight:600;
+}
+.review-card span{
+  color:#f5a623;
+  font-size:14px;
+}
+
+@media (min-width:768px){
+  .review-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
 }/* MOBILE BANNER FIX */
 @media (max-width: 768px){
 
@@ -292,6 +328,30 @@ header{
     </div>
   </div>
 </div>
+<!-- CUSTOMER REVIEWS -->
+<div class="section reviews">
+  <h2>What Our Customers Say 💬</h2>
+
+  <div class="review-grid">
+    <div class="review-card">
+      <p>“Quality is amazing 😍 kurti bilkul same aayi jaise photo me thi.”</p>
+      <h4>— Riya, Indore</h4>
+      <span>⭐⭐⭐⭐⭐</span>
+    </div>
+
+    <div class="review-card">
+      <p>“Bridal lehenga was stunning ✨ fitting perfect and ap bhi try karo.”</p>
+      <h4>— Neha, Indore</h4>
+      <span>⭐⭐⭐⭐⭐</span>
+    </div>
+
+    <div class="review-card">
+      <p>“Loved the westernish collection 💕 very stylish & affordable.”</p>
+      <h4>— Anjali, Ujjain</h4>
+      <span>⭐⭐⭐⭐⭐</span>
+    </div>
+  </div>
+</div>
 
 <!-- BOTTOM BAR -->
 <div class="bottom-bar">
@@ -302,6 +362,7 @@ header{
 
 </body>
 </html>
+
 
 
 
