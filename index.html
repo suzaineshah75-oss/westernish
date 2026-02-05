@@ -1,221 +1,256 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Westernish</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+    <!--========== Box Icon =======================-->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-body{
-  font-family: Arial, sans-serif;
-  background:#faf9f7;
-  color:#111;
-  padding-bottom:70px;
-}
-
-/* HEADER */
-header{
-  background:#fff;
-  padding:14px 20px;
-  font-weight:700;
-  font-size:18px;
-  box-shadow:0 2px 10px rgba(0,0,0,.08);
-}
-
-/* ===== HERO BANNER (FINAL FIX) ===== */
-.hero-new{
-  position:relative;
-  width:100%;
-  height:90vh;
-  overflow:hidden;
-}
-
-.hero-new picture,
-.hero-new img{
-  width:100%;
-  height:100%;
-}
-
-.hero-new img{
-  object-fit:cover;
-  display:block;
-}
-
-/* overlay */
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.35);
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  padding:24px;
-  color:#fff;
-}
-
-.hero-overlay h1{
-  font-size:32px;
-  line-height:1.2;
-  margin-bottom:10px;
-}
-
-.hero-overlay p{
-  font-size:15px;
-  margin-bottom:16px;
-}
-
-.hero-btn{
-  background:#fff;
-  color:#000;
-  text-decoration:none;
-  padding:12px 22px;
-  border-radius:30px;
-  font-weight:600;
-  width:max-content;
-}
-
-/* MOBILE HERO */
-@media(max-width:768px){
-  .hero-new{
-    height:85vh;
-  }
-  .hero-overlay h1{
-    font-size:24px;
-  }
-}
-
-/* SECTION */
-.section{
-  padding:40px 20px;
-}
-
-/* BOTTOM BAR */
-.bottom-bar{
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  background:#25D366;
-  display:flex;
-  justify-content:space-around;
-  padding:12px 0;
-  z-index:1000;
-}
-
-.bottom-bar a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
-}
-
-/* POPUP BASE */
-.popup{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-
-.popup-box{
-  background:#fff;
-  padding:22px;
-  border-radius:16px;
-  width:85%;
-  max-width:320px;
-  text-align:center;
-}
-
-.popup .close{
-  text-align:right;
-  cursor:pointer;
-  font-size:18px;
-}
-
-/* Insta popup button */
-.insta-popup-btn{
-  display:block;
-  margin-top:16px;
-  padding:12px;
-  background:#E1306C;
-  color:#fff;
-  border-radius:24px;
-  text-decoration:none;
-  font-weight:600;
-}
-</style>
+    <!--========== CSS =======================-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <title>Wedding Catalog</title>
 </head>
-
 <body>
+    <!--========== SCROLL TOP =======================-->
 
-<header>Westernish</header>
+    <!--========== HEADER  =======================-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">JESSICA</a>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="#featured" class="nav__link">Featured</a></li>
+                    <li class="nav__item"><a href="#new" class="nav__link">New</a></li>
+                    <li class="nav__item"><a href="#subscribed" class="nav__link">Subscribed</a></li>
+                </ul>
+            </div>
+            <div>
+                <i class='bx bx-cart nav__cart'></i>
+                <i class='bx bx-menu nav__toggle' id="nav-toggle" ></i>
+            </div>
+            
+        </nav>
+    </header>
 
-<!-- HERO -->
-<section class="hero-new">
-  <picture>
-    <source media="(max-width:768px)" srcset="images/banner-mobile.jpg">
-    <img src="images/banner-updated.jpg" alt="Westernish Banner">
-  </picture>
+    <main class="l-main">
 
-  <div class="hero-overlay">
-    <h1>Own the Night.<br>Own Your Style.</h1>
-    <p>Bold • Sexy • Western fashion for Gen-Z women</p>
-    <a href="#shop" class="hero-btn">Shop the Drop</a>
-  </div>
-</section>
+        <!--========== HOME  =======================-->
+        <section class="home" id="home">
+            <div class="home__container bd-grid">
+                <div class="home__data">
+                    <h1 class="home__title">ELEGANT <br>AND<br><span>LUXURIOUS</span></h1>
+                    <a href="#featured" class="button">GO SHOPPING</a>
 
-<!-- SAMPLE SECTION -->
-<div class="section" id="shop">
-  <h2>New Arrivals</h2>
-  <p>Latest western & party wear collection.</p>
-</div>
+                </div>
 
-<!-- INSTAGRAM POPUP -->
-<div class="popup" id="instaPopup">
-  <div class="popup-box">
-    <div class="close" onclick="closePopup('instaPopup')">✖</div>
-    <h3>Follow us on Instagram</h3>
-    <p>@westernish_store</p>
-    <a href="https://www.instagram.com/westernish_store/"
-       target="_blank"
-       class="insta-popup-btn">Open Instagram</a>
-  </div>
-</div>
+                <img src="./assets/img/home.png" alt="" class="home__img">
 
-<!-- BOTTOM BAR -->
-<div class="bottom-bar">
-  <a href="https://wa.me/918103665109">💬 WhatsApp</a>
-  <a href="tel:8103665109">📞 Call</a>
-  <a href="https://www.google.com/maps?q=PVXX+3PP+Indore" target="_blank">📍 Map</a>
-  <a href="javascript:void(0)" onclick="openPopup('instaPopup')">📸 Insta</a>
-</div>
+            </div>
 
-<!-- JS -->
-<script>
-function openPopup(id){
-  var el=document.getElementById(id);
-  if(el){ el.style.display="flex"; }
-}
-function closePopup(id){
-  var el=document.getElementById(id);
-  if(el){ el.style.display="none"; }
-}
-</script>
+        </section>
 
+
+        <!--========== COLLECTIONS  =======================-->
+        <section class="collection section">
+            <div class="collection__container bd-grid">
+                <div class="collection__box">
+                    <img src="./assets/img/fall.jpg" alt="" class="collection__img">
+
+                    <div class="collection__data">
+                        <h2 class="collection__title"><span class="collection__subtitle">Fall</span><br>Collection</h2>
+                        <a href="#" class="collection__view">View collection</a>
+
+                    </div>
+                </div>
+                <div class="collection__box">
+                    
+                    <div class="collection__data">
+                        <h2 class="collection__title"><span class="collection__subtitle">Summer</span><br>Collection</h2>
+                        <a href="#" class="collection__view">View collection</a>
+
+                    </div>
+                    <img src="./assets/img/summer.jpg" alt="" class="collection__img">
+                </div>
+            </div>
+        </section>
+
+
+        <!--========== FEATURED PRODUCTS  =======================-->
+        <section class="featured section" id="featured">
+            <h2 class="section-title">FEATURED PRODUCTS</h2>
+            <a href="#" class="section-all">View all</a>
+
+            <div class="featured__container bd-grid">
+                <div class="featured__product">
+                    <div class="featured__box">
+                        <div class="featured__new">NEW</div>
+                        <img src="./assets/img/featuredImg.jpg" alt="" class="featured__img">
+                        
+                        
+                    </div>
+                    <div class="featured__data">
+                        <h3 class="featured__name">Blank1</h3>
+                        <span class="featured__price">$100</span>
+                    </div>
+                </div>
+
+                <div class="featured__product">
+                    <div class="featured__box">
+                        <div class="featured__new">NEW</div>
+                        <img src="./assets/img/featuredImg.jpg" alt="" class="featured__img">
+                                               
+                    </div>
+                    <div class="featured__data">
+                        <h3 class="featured__name">Blank2</h3>
+                        <span class="featured__price">$100</span>
+                    </div>
+                </div>
+
+                <div class="featured__product">
+                    <div class="featured__box">
+                        <div class="featured__new">NEW</div>
+                        <img src="./assets/img/featuredImg.jpg" alt="" class="featured__img">
+                                               
+                    </div>
+                    <div class="featured__data">
+                        <h3 class="featured__name">Blank3</h3>
+                        <span class="featured__price">$100</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!--========== OFFERS  =======================-->
+        <section class="offer section">
+            <div class="offer__bg">
+                <div class="offer__data">
+                <h2 class="offer__title">Special offer</h2>
+                <p class="offer__description">Special offer for Evening dresses9 this Week only</p>
+                
+                <a href="" class="button">SHOP NOW</a>
+                </div>
+                
+            </div>
+        </section>
+
+
+
+        <!--========== NEW ARRIVALS  =======================-->
+        <section class="new section" id="new">
+            <h2 class="section-title">NEW ARRIVALS</h2>
+            <a href="#" class="section-all">View All</a>
+            <div class="new__container bd-grid">
+                <div class="new__box">
+                    <img src="./assets/img/NewArrivalsImg.png" alt="" class="new__img">
+
+                    <div class="new__link">
+                        <a href="#" class="button">VIEW PRODUCT</a>
+                    </div>
+                </div>
+                <div class="new__box">
+                    <img src="./assets/img/NewArrivalsImg.png" alt="" class="new__img">
+
+                    <div class="new__link">
+                        <a href="#" class="button">VIEW PRODUCT</a>
+                    </div>
+                </div>
+                <div class="new__box">
+                    <img src="./assets/img/NewArrivalsImg.png" alt="" class="new__img">
+
+                    <div class="new__link">
+                        <a href="#" class="button">VIEW PRODUCT</a>
+                    </div>
+                </div>
+                <div class="new__box">
+                    <img src="./assets/img/NewArrivalsImg.png" alt="" class="new__img">
+
+                    <div class="new__link">
+                        <a href="#" class="button">VIEW PRODUCT</a>
+                    </div>
+                </div>
+                <div class="new__box">
+                    <img src="./assets/img/NewArrivalsImg.png" alt="" class="new__img">
+
+                    <div class="new__link">
+                        <a href="#" class="button">VIEW PRODUCT</a>
+                    </div>
+                </div>
+                <div class="new__box">
+                    <img src="./assets/img/NewArrivalsImg.png" alt="" class="new__img">
+
+                    <div class="new__link">
+                        <a href="#" class="button">VIEW PRODUCT</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--========== NEWSLETTERS  =======================-->
+        <section class="newsletter section" id="subscribed">
+            <div class="newsletter__container bd-grid">
+                <div class="newsletter__subscribe">
+                    <h2 class="section-title">NEWSLETTERS</h2>
+                    <p class="newsletter__description">promotions new products and sales directly to you</p>
+
+                    <form action="" class="newsletter__form">
+                        <input type="text" class="newsletter__input" placeholder="Enter your email">
+                        <a href="" class="button">SUBSCRIBE</a>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!--========== SPONSORS  =======================-->
+
+
+        
+
+    </main>
+
+    <!--========== FOOTER  =======================-->
+    <footer class="footer section">
+        <div class="footer__container bd-grid">
+            <div class="footer__box">
+                <h3 class="footer__title">EXPLORE</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Home</a></li>
+                    <li><a href="#" class="footer__link">Featured</a></li>
+                    <li><a href="#" class="footer__link">Newsletter</a></li>
+                    <li><a href="#" class="footer__link">Subscribe</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__box">
+                <h3 class="footer__title">SERVICES & MORE</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Pricing</a></li>
+                    <li><a href="#" class="footer__link">Shipping</a></li>
+                    <li><a href="#" class="footer__link">Events</a></li>
+                    <li><a href="#" class="footer__link">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__box">
+                <h3 class="footer__title">FOLLOW US</h3>
+                <a href="#" class="footer__social"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#" class="footer__social"><i class='bx bxl-facebook-square'></i></a>
+                <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+            </div>
+        </div>
+        <p class="footer__copy">&#169; 2021 copyright all right reserved</p>
+    </footer>
+
+    <!--========== MAIN.JS  =======================-->
+    <script src="assets/js/main.js"></script>
+    
+    
 </body>
 </html>
-
-
-
-
-
 
 
